@@ -24,6 +24,15 @@ df_merged['GRI'] = pd.to_numeric(df_merged['GRI'], errors='coerce').fillna(0)
 
 # Function to get top topics per pillar per year
 def get_top_topics(df):
+    """
+    Getting the most discussed topic per ESG pillar for each year.
+    Args:
+        df (pd.DataFrame): DataFrame containing ESG topic data.
+    Returns:
+        pd.DataFrame: DataFrame with most discussed topics per pillar per year.
+    Example Usage:
+        top_topics = get_top_topics(df_topic)
+    """
     e_top = (df.groupby(['filing_year', 'E_topic_name']).size().reset_index(name='count')
              .sort_values(['filing_year', 'count'], ascending=[True, False])
              .groupby('filing_year').head(1)
@@ -115,6 +124,15 @@ app.layout = html.Div([
 )
 # Update filter options and default selections based on selected sectors
 def update_filters(selected_sectors):
+    """
+    Updating filter options and default selections based on selected sectors.
+    Args:
+        selected_sectors (list): List of selected sectors from the sector filter.   
+    Returns:
+        tuple: Updated options and default values for sector, company, and year filters.
+    Example Usage:
+        options_sector, value_sector, options_company, value_company, options_year, value_year = update_filters(selected_sectors)
+    """
     all_sectors = sorted(df_merged['Sector'].dropna().unique())
     default_sector = ["Information Technology"] if "Information Technology" in all_sectors else (all_sectors[:1] if all_sectors else [])
     sectors = selected_sectors if selected_sectors else default_sector
@@ -146,6 +164,17 @@ def update_filters(selected_sectors):
     Input('year-filter', 'value')
 )
 def update_charts(selected_sectors, selected_companies, selected_years):
+    """
+    Update all charts based on selected filters.
+    Args:
+        selected_sectors (list): List of selected sectors from the sector filter.
+        selected_companies (list): List of selected companies from the company filter.
+        selected_years (list): List of selected years from the year filter.
+    Returns:
+        tuple: Updated figures for all charts in the dashboard.
+    Example Usage:
+        fig_esg, fig_gri, fig_pillar, fig_dom_year, card_e, card_s, card_g, card_esg, pie = update_charts(selected_sectors, selected_companies, selected_years)
+    """
     if not selected_sectors:
         selected_sectors = df_merged['Sector'].dropna().unique().tolist()
     if not selected_companies:
@@ -245,6 +274,17 @@ def update_charts(selected_sectors, selected_companies, selected_years):
 
     # Cards for Most Dominant Topics
     def make_card(title, topic, color):
+        """
+        Make a card figure for displaying dominant topics.
+        Args:
+            title (str): Title of the card.
+            topic (str): Dominant topic to display.
+            color (str): Border color for the card.
+        Returns:
+            fig (go.Figure): Plotly figure representing the card.
+        Example Usage:
+            card_fig = make_card("Most Dominant Environmental Theme", "Climate Change", "#2ca02c")
+        """
         fig = go.Figure()
         wrapped = "<br>".join(textwrap.wrap(topic, width=25))
         fig.add_annotation(
