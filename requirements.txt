@@ -1,0 +1,15 @@
+# Core libraries
+pandas
+numpy
+nltk
+gensim
+pyLDAvis
+tqdm
+
+# Visualization and Dashboard
+dash
+plotly
+textwrap3  # safer for text wrapping in Python 3
+
+# Optional but recommended
+python-dotenv
