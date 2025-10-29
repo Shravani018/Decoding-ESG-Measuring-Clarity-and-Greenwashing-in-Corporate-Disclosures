@@ -86,7 +86,7 @@ We examine **10 years (2015–2025)** of SEC 10-K filings from **S&P 50 companie
 ## ⚙️ Tools & Technologies
 
 - **Programming Language:** Python  
-- **Libraries:** `guidedlda`, `pandas`, `nltk`, `regex`, `matplotlib`, `edgar`  
+- **Libraries:** `gensim`, `pandas`, `nltk`, `regex`, `matplotlib`, `edgar`  
 - **Modeling:** Guided LDA Topic Modeling  
 - **Linguistic Analysis:** Concreteness and Vagueness Scoring using NLP  
 - **Evaluation:** Topic Coherence Metrics  
