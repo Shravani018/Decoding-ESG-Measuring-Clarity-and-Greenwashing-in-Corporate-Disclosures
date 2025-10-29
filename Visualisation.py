@@ -7,8 +7,8 @@ import plotly.graph_objects as go
 import textwrap
 
 # Loading the data generated from ESG topic modeling and scoring
-df_topic = pd.read_csv(r"D:\VSCODE\ESG_Submission\Final_mapped_topics.csv")
-df_score = pd.read_csv(r"D:\VSCODE\ESG_Submission\ESG_Topic_Modeling_Concreteness_Scores.csv")
+df_topic = pd.read_csv(r"Final_mapped_topics.csv")
+df_score = pd.read_csv(r"ESG_Topic_Modeling_Concreteness_Scores.csv")
 
 # Data Preprocessing for visualization
 df_score['filing_date'] = pd.to_datetime(df_score['filing_date']).dt.normalize()
