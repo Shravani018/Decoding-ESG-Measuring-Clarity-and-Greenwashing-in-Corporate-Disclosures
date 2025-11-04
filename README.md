@@ -123,7 +123,7 @@ All AI-assisted outputs were **reviewed and validated** by the authors to ensure
 
 ## 🔗 Links
 
-- 📄 **Code Repository:** [GitHub] – (https://github.com/Shravani018/Decoding-ESG-Measuring-Clarity-and-Greenwashing-in-Corporate-Disclosures.git)
+- 📄 **Code Repository:** [GitHub](https://github.com/Shravani018/Decoding-ESG-Measuring-Clarity-and-Greenwashing-in-Corporate-Disclosures.git)
 - 📑 **Data Source:** [SEC EDGAR Database](https://www.sec.gov/edgar)
 - 📊 **Presentation:** `Presentation.pptx` (included in repo)
 - 🧾 **Full Report:** `Micropublication.docx` (included in repo)
